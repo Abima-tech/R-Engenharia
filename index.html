@@ -61,7 +61,14 @@
             .warranty-box { flex-direction: column; text-align: center; }
         }
 
-        footer { background: var(--dark); color: #777; padding: 80px 25px; text-align: center; }
+        footer { background: var(--dark); color: #bbb; padding: 60px 25px; text-align: center; font-size: 14px; }
+        .footer-info { margin-bottom: 20px; line-height: 1.8; }
+        .footer-info strong { color: #fff; display: block; margin-bottom: 5px; font-size: 16px; }
+        
+        .map-btn { display: inline-flex; align-items: center; gap: 10px; color: var(--accent); text-decoration: none; font-weight: 700; margin-top: 20px; border: 2px solid var(--accent); padding: 15px 30px; border-radius: 50px; transition: 0.3s; }
+        .map-btn:hover { background: var(--accent); color: #fff; }
+
+        .insta-container { width: 100%; max-width: 500px; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid #eee; }
     </style>
 </head>
 <body>
@@ -198,7 +205,7 @@
         <div style="max-width: 800px; margin: 0 auto;">
             <div class="faq-item">
                 <strong>O sistema gera energia em dias de chuva?</strong>
-                <p style="font-size: 15px; margin: 0;">Sim. Embora a produção seja menor que em dias de sol pleno, a luz difusa ainda é captada e convertida em energia.</p>
+                <p style="font-size: 15px; margin: 0;">Sim. Embora a produção seja menor que em dias de sol pleno, a luz divusa ainda é captada e convertida em energia.</p>
             </div>
             <div class="faq-item">
                 <strong>Qual a manutenção necessária?</strong>
@@ -212,11 +219,20 @@
     </section>
 
     <section class="section" style="background: var(--gray); text-align: center;">
-        <span class="tag">Cobertura</span>
-        <h2>Atendimento em todo o Amapá</h2>
-        <p style="max-width: 600px; margin: 0 auto 30px;">Instalamos usinas solares em Macapá, Santana, Mazagão e em todo o interior do estado. Nossa logística é preparada para levar energia limpa onde você estiver.</p>
-        <div style="font-size: 40px; color: var(--accent);">
-            <i class="fa-solid fa-map-location-dot"></i>
+        <span class="tag">Onde Estamos</span>
+        <h2>Visite nosso escritório</h2>
+        <p style="max-width: 600px; margin: 0 auto 10px;">Estamos prontos para te receber e planejar seu projeto solar em Macapá.</p>
+        <a href="https://maps.app.goo.gl/uJLWUwdrvkAMAhSx8" target="_blank" class="map-btn">
+            <i class="fa-solid fa-location-dot"></i> VER NO GOOGLE MAPS
+        </a>
+    </section>
+
+    <section class="section" style="text-align: center;">
+        <span class="tag">Social</span>
+        <h2>Siga nosso trabalho</h2>
+        <p style="margin-bottom: 30px;">Acompanhe nossas instalações e novidades no Instagram.</p>
+        <div class="insta-container">
+            <iframe src="https://www.instagram.com/_r.engenharia_/embed" width="100%" height="550" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
         </div>
     </section>
 
@@ -229,12 +245,17 @@
     </section>
 
     <footer>
-        <p style="font-weight: 800; color: #fff; margin-bottom: 10px;">R. ENGENHARIA | SOLUÇÕES ELÉTRICAS</p>
-        <p>Macapá - Amapá | Atendimento em todo o estado.</p>
-        <div style="margin-top: 30px; font-size: 20px; gap: 20px; display: flex; justify-content: center;">
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-whatsapp"></i>
+        <div class="footer-info">
+            <strong>R. ENGENHARIA SOLUÇÕES ELÉTRICAS</strong>
+            CNPJ: 30.636.537/0001-03<br>
+            AV. DELEGADO ANTONIO MELO, 686, CONGÓS - MACAPÁ/AP<br>
+            Contato: (96) 99171-3832 | E-mail: R.ENGENHARIA.SE@GMAIL.COM
         </div>
+        <div style="margin: 20px 0; font-size: 22px; gap: 25px; display: flex; justify-content: center;">
+            <a href="https://www.instagram.com/_r.engenharia_/" target="_blank" style="color: inherit;"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/5596991713832" target="_blank" style="color: inherit;"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+        <p>© 2024 R. Engenharia - Todos os direitos reservados.</p>
     </footer>
 
 </div>
