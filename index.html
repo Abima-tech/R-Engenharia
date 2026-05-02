@@ -34,29 +34,47 @@
         .card:hover { border-color: var(--accent); transform: translateY(-5px); }
         .step-num { font-size: 40px; font-weight: 800; color: rgba(0,122,255,0.2); margin-bottom: 10px; font-family: 'Montserrat'; }
 
-        /* OFERTAS */
-        .price-card { background: #fff; padding: 40px 30px; border-radius: 30px; border: 1px solid #eee; text-align: center; position: relative; }
-        .price-card.featured { background: var(--dark); color: #fff; border: none; transform: scale(1.05); z-index: 2; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
-        .price-card .val { font-size: 35px; font-weight: 800; margin: 20px 0; font-family: 'Montserrat'; }
+        /* SOLUÇÕES */
+        .solution-card {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 30px;
+            border: 1px solid #eee;
+            text-align: center;
+            transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        .solution-card:hover { transform: translateY(-12px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: var(--accent); }
+        .solution-icon { font-size: 45px; color: var(--accent); margin-bottom: 20px; opacity: 0.9; }
+        .solution-card h3 { font-family: 'Montserrat'; font-size: 18px; letter-spacing: 2px; margin-bottom: 15px; color: var(--dark); }
+        .solution-card p { font-size: 14px; color: #666; line-height: 1.6; margin-bottom: 25px; }
         
-        /* BOTÕES */
+        .btn-outline { border: 2px solid var(--accent); color: var(--accent); padding: 12px 20px; border-radius: 12px; text-decoration: none; font-weight: 700; font-size: 13px; transition: 0.3s; }
+        .solution-card:hover .btn-outline { background: var(--accent); color: #fff; }
+
+        /* PAGAMENTO CARDS */
+        .pay-card { background: var(--dark); color: #fff; padding: 30px; border-radius: 20px; text-align: center; border: 1px solid transparent; transition: 0.3s; }
+        .pay-card i { font-size: 30px; color: var(--accent); margin-bottom: 15px; display: block; }
+        .pay-card strong { font-family: 'Montserrat'; font-size: 20px; display: block; margin-bottom: 10px; }
+        .pay-card span { font-size: 14px; opacity: 0.7; }
+
+        /* BOTÕES GERAIS */
         .btn-cta { background: var(--whatsapp); color: #fff; padding: 20px 40px; border-radius: 18px; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 12px; font-size: 18px; transition: 0.3s; }
         .btn-cta:hover { transform: scale(1.05); filter: brightness(1.1); }
         .btn-sm { background: var(--accent); color: #fff; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 13px; }
 
-        /* FAQ */
+        /* OUTROS */
         .faq-item { margin-bottom: 20px; background: var(--gray); padding: 25px; border-radius: 15px; }
         .faq-item strong { display: block; margin-bottom: 10px; color: var(--accent); }
-
-        /* NOVAS SEÇÕES ESTILIZADAS */
         .warranty-box { background: var(--dark); color: #fff; border-radius: 30px; padding: 40px; display: flex; align-items: center; gap: 30px; }
         .warranty-icon { font-size: 50px; color: var(--accent); }
 
-        /* RESPONSIVIDADE */
         @media (max-width: 900px) {
             .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
             .section { padding: 60px 25px; }
-            .price-card.featured { transform: none; margin: 20px 0; }
             .top-bar .btn-sm { display: none; }
             .warranty-box { flex-direction: column; text-align: center; }
         }
@@ -64,10 +82,8 @@
         footer { background: var(--dark); color: #bbb; padding: 60px 25px; text-align: center; font-size: 14px; }
         .footer-info { margin-bottom: 20px; line-height: 1.8; }
         .footer-info strong { color: #fff; display: block; margin-bottom: 5px; font-size: 16px; }
-        
         .map-btn { display: inline-flex; align-items: center; gap: 10px; color: var(--accent); text-decoration: none; font-weight: 700; margin-top: 20px; border: 2px solid var(--accent); padding: 15px 30px; border-radius: 50px; transition: 0.3s; }
         .map-btn:hover { background: var(--accent); color: #fff; }
-
         .insta-container { width: 100%; max-width: 500px; margin: 0 auto; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border: 1px solid #eee; }
     </style>
 </head>
@@ -80,6 +96,7 @@
         <a href="https://wa.me/5596984132588" class="btn-sm">SOLICITAR ESTUDO GRÁTIS</a>
     </header>
 
+    <!-- HERO SECTION -->
     <section class="section grid-2">
         <div>
             <span class="tag">Soluções Elétricas</span>
@@ -96,6 +113,7 @@
         </div>
     </section>
 
+    <!-- PROCESSO -->
     <section class="section">
         <span class="tag" style="text-align: center;">Processo</span>
         <h2>Como funciona a instalação?</h2>
@@ -123,6 +141,64 @@
         </div>
     </section>
 
+    <!-- CONSULTORIA -->
+    <section class="section" style="background: #fafafa;">
+        <span class="tag" style="text-align: center;">Consultoria</span>
+        <h2>Soluções de Engenharia Fotovoltaica</h2>
+        <div class="grid-3">
+            <div class="solution-card">
+                <div>
+                    <div class="solution-icon"><i class="fa-solid fa-house-laptop"></i></div>
+                    <h3>RESIDENCIAL</h3>
+                    <p>Independência energética e valorização do seu patrimônio. Invista na tecnologia que elimina sua conta de luz com máximo conforto térmico.</p>
+                </div>
+                <a href="https://wa.me/5596984132588" class="btn-outline">SOLICITAR ESTUDO DE VIABILIDADE</a>
+            </div>
+
+            <div class="solution-card">
+                <div>
+                    <div class="solution-icon"><i class="fa-solid fa-tractor"></i></div>
+                    <h3>RURAL</h3>
+                    <p>Infraestrutura resiliente para maximizar sua produtividade. Reduza custos operacionais e garanta autonomia para sua produção agrícola.</p>
+                </div>
+                <a href="https://wa.me/5596984132588" class="btn-outline">SOLICITAR ESTUDO DE VIABILIDADE</a>
+            </div>
+
+            <div class="solution-card">
+                <div>
+                    <div class="solution-icon"><i class="fa-solid fa-industry"></i></div>
+                    <h3>COMERCIAL</h3>
+                    <p>Eficiência operacional para converter despesas fixas em lucro. Destaque sua empresa no mercado com sustentabilidade estratégica.</p>
+                </div>
+                <a href="https://wa.me/5596984132588" class="btn-outline">SOLICITAR ESTUDO DE VIABILIDADE</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MÉTODOS DE PAGAMENTO -->
+    <section class="section" style="background: var(--bg);">
+        <span class="tag" style="text-align: center;">Facilidade</span>
+        <h2>Formas de Pagamento</h2>
+        <div class="grid-3">
+            <div class="pay-card">
+                <i class="fa-solid fa-hand-holding-dollar"></i>
+                <strong>À Vista</strong>
+                <span>Condições exclusivas para pagamento imediato.</span>
+            </div>
+            <div class="pay-card">
+                <i class="fa-solid fa-credit-card"></i>
+                <strong>Crédito</strong>
+                <span>Parcelamento facilitado em até 120x no cartão.</span>
+            </div>
+            <div class="pay-card">
+                <i class="fa-solid fa-calendar-check"></i>
+                <strong>Financiamento</strong>
+                <span>Projetos com até 4 meses de carência para começar a pagar.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- GARANTIA -->
     <section class="section">
         <div class="warranty-box">
             <div class="warranty-icon">
@@ -135,48 +211,8 @@
         </div>
     </section>
 
-    <section class="section" style="background: #fafafa;">
-        <span class="tag" style="text-align: center;">Investimento</span>
-        <h2>Nossas Ofertas de Março</h2>
-        <div class="grid-3">
-            <div class="price-card">
-                <h3>800 kWh</h3>
-                <p>Residencial Standard</p>
-                <div class="val">R$ 14.955</div>
-                <ul style="list-style: none; padding: 0; font-size: 14px; text-align: left; margin-bottom: 25px;">
-                    <li><i class="fa-solid fa-check" style="color: var(--accent);"></i> Inversor de alta performance</li>
-                    <li><i class="fa-solid fa-check" style="color: var(--accent);"></i> Placas Tier 1</li>
-                </ul>
-            </div>
-
-            <div class="price-card featured">
-                <span style="background: var(--accent); color: #fff; padding: 5px 15px; border-radius: 20px; font-size: 10px; font-weight: 700; position: absolute; top: -15px; left: 50%; transform: translateX(-50%);">MAIS VENDIDO</span>
-                <h3>1000 kWh</h3>
-                <p>Residencial Premium</p>
-                <div class="val">R$ 17.477</div>
-                <ul style="list-style: none; padding: 0; font-size: 14px; text-align: left; margin-bottom: 25px;">
-                    <li><i class="fa-solid fa-check" style="color: var(--accent);"></i> Ideal para casas com AC</li>
-                    <li><i class="fa-solid fa-check" style="color: var(--accent);"></i> Monitoramento via App</li>
-                </ul>
-            </div>
-
-            <div class="price-card">
-                <h3>1500 kWh</h3>
-                <p>Comercial Full</p>
-                <div class="val">R$ 25.700</div>
-                <ul style="list-style: none; padding: 0; font-size: 14px; text-align: left; margin-bottom: 25px;">
-                    <li><i class="fa-solid fa-check" style="color: var(--accent);"></i> Foco em alta demanda</li>
-                    <li><i class="fa-solid fa-check" style="color: var(--accent);"></i> Suporte técnico prioritário</li>
-                </ul>
-            </div>
-        </div>
-        <p style="text-align: center; margin-top: 50px; font-weight: 700;">💳 Parcelamento em até 18x no cartão de crédito.</p>
-    </section>
-
-   
-
-
- <section class="section" style="text-align: center;">
+    <!-- INSTAGRAM -->
+    <section class="section" style="text-align: center;">
         <span class="tag">Social</span>
         <h2>Siga nosso trabalho</h2>
         <p style="margin-bottom: 30px;">Acompanhe nossas instalações e novidades no Instagram.</p>
@@ -185,9 +221,7 @@
         </div>
     </section>
 
-
-  
-
+    <!-- MAPA -->
     <section class="section" style="background: var(--gray); text-align: center;">
         <span class="tag">Onde Estamos</span>
         <h2>Visite nosso escritório</h2>
@@ -197,14 +231,7 @@
         </a>
     </section>
 
-
-
-
-   
-
- 
-
-
+    <!-- CTA FINAL -->
     <section class="section" style="text-align: center; background: var(--accent); color: #fff;">
         <h2 style="color: #fff; margin-bottom: 20px;">Pronto para zerar sua conta?</h2>
         <p style="font-size: 18px; margin-bottom: 40px; opacity: 0.9;">Receba um estudo de viabilidade gratuito da R. Engenharia.</p>
@@ -213,10 +240,8 @@
         </a>
     </section>
 
-
-
-
- <section class="section">
+    <!-- FAQ -->
+    <section class="section">
         <span class="tag" style="text-align: center;">Dúvidas Comuns</span>
         <h2>Perguntas Frequentes</h2>
         <div style="max-width: 800px; margin: 0 auto;">
@@ -235,10 +260,7 @@
         </div>
     </section>
 
-
-
-
-
+    <!-- RODAPÉ -->
     <footer>
         <div class="footer-info">
             <strong>R. ENGENHARIA SOLUÇÕES ELÉTRICAS</strong>
